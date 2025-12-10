@@ -1,5 +1,4 @@
-﻿##
-var a, b: boolean;
-var c := True;
-var (d, e, f) := (False, True, False);
-Print(a, b, c, d, e, f);
+﻿// Найти минимальное из двух произвольных чисел.
+##
+var (a, b) := ReadReal2('Введите два числа:');
+Print('Минимальное:', a < b ? a : b);
