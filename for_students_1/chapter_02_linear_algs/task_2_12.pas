@@ -8,28 +8,19 @@ var (xB, yB) := ReadReal2('... координаты второй точки:');
 var (xC, yC) := ReadReal2('... координаты третьей точки:');
 
 // Нахождение периметра
-var a_length := Sqrt((xB - xA)**2 + (yB - yA)**2);
-var b_length := Sqrt((xC - xB)**2 + (yC - yB)**2);
-var c_length := Sqrt((xA - xC)**2 + (yA - yC)**2);
+var a_length := Sqrt((xC - xB)**2 + (yC - yB)**2);
+var b_length := Sqrt((xC - xA)**2 + (yC - yA)**2);
+var c_length := Sqrt((xB - xA)**2 + (yB - yA)**2);
 var per := a_length + b_length + c_length;
 
-// Площадь
-var (xV, yV);
-var base_length;
-var height;
-if (a_length >= b_length and a_length >= c_length) then
-begin
-  base_length = a_length;
-  xV, yV = xC, yC;
-end;
-else if (b_length >= a_length and b_length >= c_length) then
-begin
-  base_length = b_length;
-  xV, yV = xA, yA;
-end
-else
-begin
-  base_length = c_length;
-  xV, yV = xB, yB;
-end;
-var sq := (base_length * ) / 2;
+// ... площади
+var half_per := per / 2;
+var s := Sqrt(per * (per - a_length) * (per - b_length) * (per - c_length));
+
+// ... окружности
+var r_inner := s / half_per;
+var r_outer := (a_length * b_length * c_length) / (4 * s);
+
+Println('Периметр:', per, 'площадь:', s);
+Println('Радиус вписанной окружности:', r_inner);
+Print('Радиус описанной окружности:', r_outer);
