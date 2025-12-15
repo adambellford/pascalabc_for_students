@@ -17,4 +17,4 @@ begin
   m := (a + b + s_d) / 4;
   if (m > 0) and (2 * m < b) then
     Print(m)
-end;
+end

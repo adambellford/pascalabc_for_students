@@ -6,5 +6,18 @@
 begin
   var (x, y) := ReadReal2('Размеры отверстия:');
   var (a, b, c) := ReadReal3('Размеры ребер кирпича:');
+  if a > b then
+    (a, b) := (b, a); // b >= a
+  if b > c then
+    Swap(b, c);       // c >= b
+  if a > b then
+    Swap(a, b);       // b >= a, если с был самым маленьким
+  if x > y then
+    Swap(x, y);
+  
+  if (a < x) and (b < y) then
+    Print('Пройдет')
+  else
+    Print('Не пройдет')
   
 end.
