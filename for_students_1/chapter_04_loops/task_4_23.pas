@@ -25,3 +25,33 @@ begin
     j += 2;
   until counter > 99;
 end.
+
+// Нормальная реализация:
+//begin
+//  var (n, k) := (1, 0);
+//  repeat
+//    var r: boolean;   // False, если число составное
+//    if n <= 1 then
+//      r := False;
+//    else if n = 2 then
+//      r := True;
+//    else if n mod 2 = 0 then // Если число кратно двум
+//      r := False
+//    else
+//    begin
+//      r := True;
+//      var j := 3;
+//      while (j * j <= n) and r do
+//        if n mod j = 0 then
+//          r := False
+//        else
+//          j += 2
+//    end;
+//    if r then
+//    begin
+//      k += 1;
+//      Print(n)
+//    end;
+//    n += 1;
+//  until k > 100;  // требуется 100 простых чисел
+//end.
