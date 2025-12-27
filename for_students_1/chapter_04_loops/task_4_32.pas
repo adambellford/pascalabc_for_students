@@ -1,12 +1,25 @@
 ﻿// Найти все простые делители заданного числа
 ##
 var n := ReadInteger('n =');
-
-for var j := 2 to Round(Sqrt(n)) do
+var iterations := 0;
+var i := 2;
+while n mod i = 0 do
 begin
-  while n mod j = 0 do
+  iterations += 1;
+  Write(i, ' ');
+  n := n div i;
+end;
+
+var end_var := Trunc((Round(Sqrt(n) - 3) / 2));
+
+for var j := 0 to end_var do
+begin
+  var t := 3 + j * 2; 
+  while n mod t = 0 do
   begin
-    Write(j, ' ');
-    n := n div j
+    iterations += 1;
+    Write(t, ' ');
+    n := n div t
   end;
 end;
+Println('Iterations:', iterations)
