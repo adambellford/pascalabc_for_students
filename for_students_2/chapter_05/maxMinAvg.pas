@@ -19,5 +19,6 @@ begin
   var Avg: real;
   MyFirst(10, Min, Max, Avg);   // вызов процедуры
   WriteLn('min = ', Min, ' max = ', Max, ' avg = ', Avg);
-  
+  MyFirst(1000, Min, Max, Avg);
+  WriteLn('min = ', Min, ' max = ', Max, ' avg = ', Avg);
 end.
