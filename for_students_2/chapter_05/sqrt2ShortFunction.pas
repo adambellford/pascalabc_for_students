@@ -2,4 +2,4 @@
 
 begin
   Println(Sqrt22(-16));
-end;
+end.
